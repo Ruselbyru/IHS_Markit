@@ -26,5 +26,14 @@ $ python manage.py shell
 ...     note = Blog(author=name, text=text, pub_date=date)
 ...     note.save()
 >>> ^Z
-
 now exiting InteractiveConsole...
+
+API :
+
+Отправляем GET запрос по адресу "http://localhost/api/top10"
+Получаем JSON формат [{имя_автора:количество его записей},]
+
+Docker:
+
+1. docker build -t ihs_markit .  создание образа
+2. docker run --name ihs -p 8000:8000 -d ihs_markit  запуск контейнера на основе образа
